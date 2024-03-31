@@ -1,0 +1,61 @@
+@mixin flexSB {
+  display: flex;
+  align-items: center;
+}
+
+.jokee-wrapper {
+  color: #767676;
+
+  .header {
+    height: 80px;
+    padding: 0 170px 0 225px;
+    @include flexSB();
+
+    justify-content: space-between;
+    .image {
+      width: 55px;
+      height: 55px;
+      .ava {
+        border-radius: 50%;
+      }
+    }
+    .user-info {
+      @include flexSB();
+      gap: 10px;
+      text-align: right;
+    }
+  }
+  .title {
+    text-align: center;
+    background-color: #29b363;
+    color: #fff;
+    padding: 50px 0 70px;
+  }
+  .content {
+    margin: 58px 250px 40px;
+    hr {
+      width: 80%;
+      margin-top: 40px;
+    }
+  }
+  .choose-button {
+    @include flexSB();
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 80px;
+    button {
+      color: #fff;
+      width: 215px;
+      height: 40px;
+      border: none;
+    }
+  }
+  .footer {
+    @include flexSB();
+    flex-direction: column;
+    gap: 20px;
+    font-size: 12px;
+    text-align: center;
+    margin: 32px 275px 35px;
+  }
+}
