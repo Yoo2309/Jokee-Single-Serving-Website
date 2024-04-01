@@ -21,7 +21,7 @@ function Jokee() {
   };
 
   const selectNextStory = () => {
-    if (voted_joke.length === 4) {
+    if (voted_joke.length === jokes.length) {
       //no more new joke
       setDone(true);
     } else {
@@ -48,8 +48,12 @@ function Jokee() {
       vote_stored = vote_stored.map((vote) => parseInt(vote));
       //set voted jokes
       setVotedJoke(vote_stored);
-    }
-    if (voted_joke.length !== jokes.length) {
+      if (vote_stored.length === jokes.length) {
+        setDone(true);
+      } else {
+        selectNextStory();
+      }
+    } else {
       selectNextStory();
     }
   }, []);
@@ -78,17 +82,19 @@ function Jokee() {
         <img className={css["image"]} src={logo} alt="" />
         <div className={css["user-info"]}>
           <div>
-            <div style={{ fontSize: 12, fontStyle: "italic" }}>
-              Handicrafted by
-            </div>
-            <div style={{ fontSize: 12, fontWeight: "700" }}>Jim HLS</div>
+            <div style={{ fontStyle: "italic" }}>Handicrafted by</div>
+            <div style={{ fontWeight: "700" }}>Jim HLS</div>
           </div>
           <img className={`${css.image} ${css.ava}`} src={ava} alt="" />
         </div>
       </div>
       <div className={css["title"]}>
-        <h2>A jokes a day can keeps the doctor away</h2>
-        <div>If you joke wrong way, your teetch have to pay. (Serious)</div>
+        <div className={css["main-title"]}>
+          A jokes a day can keeps the doctor away
+        </div>
+        <div className={css["sub-title"]}>
+          If you joke wrong way, your teetch have to pay. (Serious)
+        </div>
       </div>
       <div className={css["content"]}>
         <div>
@@ -128,7 +134,7 @@ function Jokee() {
           accepts no liability for any loss or damage which may arise from
           reliance on the information contained on this site.
         </div>
-        <div style={{ fontWeight: 500 }}>Copyright 2021 HLS</div>
+        <div style={{ fontWeight: 600 }}>Copyright 2021 HLS</div>
       </div>
     </div>
   );

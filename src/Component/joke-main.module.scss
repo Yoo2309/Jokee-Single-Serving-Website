@@ -5,11 +5,13 @@
 
 .jokee-wrapper {
   color: #767676;
+  font-family: "Open Sans";
 
   .header {
+    @include flexSB();
+    font-family: inherit;
     height: 80px;
     padding: 0 170px 0 225px;
-    @include flexSB();
 
     justify-content: space-between;
     .image {
@@ -23,16 +25,31 @@
       @include flexSB();
       gap: 10px;
       text-align: right;
+      font-size: 12px;
+      font-family: "Poppins";
     }
   }
   .title {
+    font-family: "Poppins";
     text-align: center;
     background-color: #29b363;
     color: #fff;
-    padding: 50px 0 70px;
+    padding: 60px 0 70px;
+    .main-title {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .sub-title {
+      font-size: 10.5px;
+      font-weight: 500;
+    }
   }
   .content {
-    margin: 58px 250px 40px;
+    font-family: inherit;
+    margin: 50px 248px;
+    font-size: 16px;
+    font-weight: 500;
     hr {
       width: 80%;
       margin-top: 40px;
@@ -40,22 +57,26 @@
   }
   .choose-button {
     @include flexSB();
+    font-family: inherit;
     justify-content: center;
-    gap: 25px;
+    gap: 24px;
     margin-bottom: 80px;
     button {
       color: #fff;
-      width: 215px;
+      width: 210px;
       height: 40px;
       border: none;
     }
   }
   .footer {
     @include flexSB();
+    font-family: inherit;
+    line-height: 1.5;
+    font-size: 11px;
+    font-weight: 500;
     flex-direction: column;
-    gap: 20px;
-    font-size: 12px;
+    gap: 16px;
     text-align: center;
-    margin: 32px 275px 35px;
+    margin: 32px 270px;
   }
 }
